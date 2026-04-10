@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voyage AI Agent Tester</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="card">
+        <header class="header">
+          <p class="eyebrow">E-tourism</p>
+          <h1>Voyage AI Agent Tester</h1>
+          <p class="subtitle">Send a prompt to your backend Gemini agent and inspect the response.</p>
+        </header>
+
+        <form id="agent-form" class="form">
+          <label for="api-url">API endpoint</label>
+          <input id="api-url" name="apiUrl" type="text" value="/api/agent/run" />
+
+          <label for="agent-input">Traveler prompt</label>
+          <textarea
+            id="agent-input"
+            name="input"
+            rows="5"
+            placeholder="Plan a 3-day eco-tourism trip in Rwanda with food and cultural spots."
+            required
+          ></textarea>
+
+          <button id="submit-btn" type="submit">Run Agent</button>
+        </form>
+
+        <section class="result-panel">
+          <div class="result-head">
+            <h2>Response</h2>
+            <span id="status" class="status idle">Idle</span>
+          </div>
+          <pre id="output" class="output">No response yet.</pre>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

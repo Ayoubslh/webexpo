@@ -1,0 +1,162 @@
+:root {
+  --bg-top: #f4fff8;
+  --bg-bottom: #e5f1ff;
+  --ink: #0f2532;
+  --muted: #506575;
+  --card: #ffffff;
+  --accent: #1b9c85;
+  --accent-dark: #0f7a66;
+  --border: #c8d7e2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: linear-gradient(160deg, var(--bg-top), var(--bg-bottom));
+}
+
+.shell {
+  width: min(920px, 92vw);
+  margin: 40px auto;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 24px 40px rgba(30, 65, 87, 0.15);
+  padding: 28px;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 8px 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+}
+
+.form {
+  margin-top: 20px;
+  display: grid;
+  gap: 10px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font: inherit;
+}
+
+input,
+textarea {
+  padding: 11px 12px;
+  background: #fbfdff;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  margin-top: 6px;
+  border: 0;
+  padding: 12px 14px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.16s ease, background 0.16s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  background: var(--accent-dark);
+}
+
+.result-panel {
+  margin-top: 22px;
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+}
+
+.result-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.status {
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.status.idle {
+  background: #e6eef5;
+  color: #4e6373;
+}
+
+.status.loading {
+  background: #fff2cc;
+  color: #8c6d1f;
+}
+
+.status.success {
+  background: #d9f6ea;
+  color: #136748;
+}
+
+.status.error {
+  background: #ffe1e1;
+  color: #8b2222;
+}
+
+.output {
+  margin-top: 10px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  min-height: 140px;
+  max-height: 360px;
+  overflow: auto;
+  background: #f9fcff;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 18px;
+  }
+}
